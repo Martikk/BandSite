@@ -1,0 +1,187 @@
+@use 'variables';
+
+@import "../mixin";
+
+
+@font-face {
+    font-family: AvenirNextRegular;
+    src: url(../Assets/Font/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+    font-family: AvenirNextDemi;
+    src: url(../Assets/Font/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+    font-family: AvenirNextBold;
+    src: url(../Assets/Font/AvenirNextLTPro-Bold.otf);
+}
+
+body {
+    font-family: 'AvenirNextRegular', 'AvenirNextDemi','AvenirNextBold';
+}
+html, body {
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+h1, h2, h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.footer_info p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.article-about__quote {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.article-about__article {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 16px 0;
+}
+.footer_info  a {
+    text-decoration: none;
+    color: white;
+}
+.article-about__article__1 {
+    padding: 16px 0;
+}
+
+
+
+.navigation {
+    background: #323232;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.navigation_logo {
+    margin-top: 2vh;
+}
+.navigation_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.navigation_link a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero-banner {
+    background-image: url('../Assets/Images/hero-bio.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 28vh;
+    width: 100%;
+    position: relative;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1;
+}
+.hero-banner__text {
+    position: relative;
+    color: white;
+    z-index: 2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50vh;
+    width: 90%;
+}
+
+.article-about {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.article-about__title{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.article-about img {
+    width: 100%;
+    height: 220px;
+}
+.article-about__article__2 {
+    padding-bottom: 16px;
+}
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.gallery {
+    background-color:#FAFAFA ;
+    padding: 5px 0;
+}
+.gallery-photo__img {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px 0 ; 
+    display: inline-block; 
+}
+.padded-section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footer_info {
+    background: #323232;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+.footer_1__social {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2vh;
+}
+.footer_logo__bandsite {
+    display: none;
+}
+.footer_end {
+    padding-top: 3vh;
+}
+
+.footer_end__text {
+    font-size:10px;
+    font-weight: 700;
+    line-height: 20px;
+}
