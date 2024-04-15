@@ -80,7 +80,6 @@ body {
 
 .footer_end p {
   font-size: 0.625rem;
-  font-weight: 700;
   line-height: 1.25rem;
 }
 @media (min-width: 813px) {
@@ -111,7 +110,7 @@ body {
   }
 }
 
-.article-about__title {
+.article-about__title, .photo-gallery__title {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 500;
@@ -122,10 +121,28 @@ body {
   width: 100%;
 }
 @media (min-width: 813px) {
-  .article-about__title {
+  .article-about__title, .photo-gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: 700;
+    font-weight: 500;
+  }
+}
+
+.article-about__title_2 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 813px) {
+  .article-about__title_2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
   }
 }
 
@@ -191,7 +208,7 @@ body {
   .navigation_links {
     flex-grow: 1;
     justify-content: flex-start;
-    gap: 2vh;
+    gap: 3rem;
   }
 }
 
@@ -317,8 +334,8 @@ body {
   .article-about__artikles {
     display: flex;
     align-items: baseline;
-    gap: 2vh;
-    margin-bottom: 4vh;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -332,7 +349,7 @@ body {
   }
 }
 
-@media (min-width: 813px) {
+@media (min-width: 1024px) {
   .article-about__quote {
     padding-right: 18%;
   }
