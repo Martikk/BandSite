@@ -47,37 +47,94 @@ h1, h2, h3 {
   padding: 16px 0;
 }
 
-.footer_info a {
-  text-decoration: none;
-  color: white;
-}
-
 .article-about__article__1 {
   padding: 16px 0;
 }
 
 .navigation {
   background: #323232;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+  text-align: center;
+  padding-top: 2vh;
+}
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+  }
 }
 
 .navigation_logo {
-  margin-top: 2vh;
+  width: 200px;
+  height: 40px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .navigation_logo {
+    margin: 0 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .navigation_logo {
+    margin: 0 4vh 0 6vh;
+  }
+}
+
+.navigation_logo__img {
+  background: url("../Assets/Logo/Logo-bandsite.svg") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .navigation_logo__img {
+    padding-top: 0.6vh;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  .navigation_logo__img {
+    padding-top: 0.6vh;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+.navigation_links {
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 768px) {
+  .navigation_links {
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vh;
+  }
 }
 
 .navigation_link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60%;
+  flex: 1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .navigation_link {
+    flex: none;
+  }
 }
 
-.navigation_link a {
-  color: white;
+.navigation_link h2 {
+  margin: 0;
+  padding: 10px 0;
   text-decoration: none;
+  color: #FFFFFF;
+}
+
+.current-page h2 {
+  border-bottom: 5px solid #FFFFFF;
 }
 
 .hero-banner {
@@ -89,9 +146,20 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 28vh;
-  width: 100%;
+  height: 35vh;
+  max-width: 100%;
   position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .hero-banner {
+    height: 70vh;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-banner {
+    height: 80vh;
+  }
 }
 
 .hero-banner::before {
@@ -107,7 +175,6 @@ h1, h2, h3 {
 
 .hero-banner__text {
   position: relative;
-  color: white;
   z-index: 2;
   color: white;
   display: flex;
@@ -132,13 +199,62 @@ h1, h2, h3 {
   width: 100%;
 }
 
-.article-about img {
+.article-about__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  overflow: hidden;
+  max-width: 400px;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .article-about__img {
+    max-width: 700px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1024px) {
+  .article-about__img {
+    max-width: 1200px;
+  }
+}
+
+.article-about__img img {
+  height: 100%;
   width: 100%;
-  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .article-about__artikles {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .article-about__artikles {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2vh;
+  }
 }
 
 .article-about__article__2 {
   padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .article-about__article__2 {
+    padding-bottom: 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .article-about__article__2 {
+    padding-bottom: 0px;
+  }
 }
 
 .photo-gallery {
@@ -148,10 +264,31 @@ h1, h2, h3 {
   justify-content: center;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .photo-gallery {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .photo-gallery {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 
 .gallery {
   background-color: #FAFAFA;
   padding: 5px 0;
+}
+
+@media (min-width: 768px) {
+  .gallery-photo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px 20px;
+  }
 }
 
 .gallery-photo__img {
@@ -162,28 +299,146 @@ h1, h2, h3 {
   margin: 10px 0;
   display: inline-block;
 }
+@media (min-width: 768px) {
+  .gallery-photo__img {
+    width: 220px;
+    height: 120px;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery-photo__img {
+    width: 400px;
+    height: 240px;
+  }
+}
 
 .padded-section {
   padding-left: 20px;
   padding-right: 20px;
 }
+@media (min-width: 768px) {
+  .padded-section {
+    padding-left: 6vh;
+    padding-right: 6vh;
+  }
+}
+@media (min-width: 1024px) {
+  .padded-section {
+    padding-left: 12vh;
+    padding-right: 12vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .article-about__board {
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .article-about__board {
+    padding-left: 4vh;
+    padding-right: 4vh;
+  }
+}
 
 .footer_info {
   background: #323232;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   color: #FFFFFF;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+@media (min-width: 768px) {
+  .footer_info {
+    padding-top: 5vh;
+    gap: 40px 20px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .footer_info {
+    gap: 40px 80px;
+  }
 }
 
-.footer_1__social {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2vh;
+@media (min-width: 768px) {
+  .footer_5_logo img {
+    margin-left: 130px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer_5_logo img {
+    margin-left: 100%;
+  }
 }
 
-.footer_logo__bandsite {
+@media (min-width: 1024px) {
+  .footer_end {
+    flex-basis: 100%;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer_1 {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .footer_1 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer_info_section_2 {
+    display: flex;
+    justify-content: flex-start;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    flex-wrap: wrap;
+    flex-basis: 900px;
+    flex-grow: 0;
+  }
+}
+.footer_1__social a {
+  margin-right: 30px;
+}
+@media (min-width: 768px) {
+  .footer_logo__bandsite__mobile, .desktop_hidden {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .footer_logo__bandsite__mobile, .desktop_hidden {
+    display: none;
+  }
+}
+
+.footer_logo__bandsite, .mobile_hidden {
   display: none;
+}
+@media (min-width: 768px) {
+  .footer_logo__bandsite, .mobile_hidden {
+    display: contents;
+    margin-right: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer_logo__bandsite, .mobile_hidden {
+    display: contents;
+  }
 }
 
 .footer_end {
@@ -194,4 +449,9 @@ h1, h2, h3 {
   font-size: 10px;
   font-weight: 700;
   line-height: 20px;
+}
+
+.footer_info a {
+  text-decoration: none;
+  color: white;
 }/*# sourceMappingURL=bio.css.map */
