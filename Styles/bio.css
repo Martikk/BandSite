@@ -575,4 +575,9 @@ body {
 
 .Footer_social_one_line img {
   padding-bottom: 5px;
+}
+@media (min-width: 1024px) {
+  .Footer_social_one_line img {
+    padding-bottom: 25px;
+  }
 }/*# sourceMappingURL=bio.css.map */
