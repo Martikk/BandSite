@@ -279,7 +279,7 @@ body {
         max-width: 700px;
     }
     @include respond-to(desktop) {
-        max-width: 1200px;
+        max-width: 60vw;
     }
 }
 
@@ -319,6 +319,9 @@ body {
 .gallery {
     background-color: #FAFAFA;
     padding: 5px 0;
+    @include respond-to(tablet) {
+        padding:0;
+    }
 }
 
 .gallery-photo {
@@ -327,6 +330,8 @@ body {
         flex-wrap: wrap;
         gap: 2vw;
         padding-bottom: 3vw;
+        padding-left: 0;
+        
     }
 }
 
@@ -341,13 +346,13 @@ body {
     transition: background 0.3s ease;
 
     @include respond-to(tablet) {
-        width: 25vw;
-        height: 12vw;
+        width: 28vw;
+        height: 14vw;
         margin: 0;
     }
     @include respond-to(desktop) {
-        width: 22vw;
-        height: 10vw;
+        width: 24vw;
+        height: 13vw;
 
     }
 
@@ -403,9 +408,9 @@ body {
         flex-direction: row;
         flex-grow: 1;
         justify-content: center;
-    }
+        
 }
-
+}
 
 
 .footer_5_logo img {
@@ -430,7 +435,7 @@ body {
         column-gap: 30px;
         flex-wrap: wrap;
         flex-basis: 900px;
-        flex-grow: 0;
+        flex-grow: 1;
         align-items: last baseline;
     }
 }
