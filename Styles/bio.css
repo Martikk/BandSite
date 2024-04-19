@@ -206,6 +206,7 @@ body {
 @media (min-width: 1024px) {
   .navigation_logo {
     margin: 0 4vh 0 6vh;
+    margin-left: 6rem;
   }
 }
 
@@ -408,6 +409,9 @@ body {
   margin: 3vw 0;
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
 }
 @media (min-width: 813px) {
   .gallery-photo__img {
@@ -416,11 +420,24 @@ body {
     margin: 0;
   }
 }
-@media (min-width: 1024px) and (max-width: 1580px) {
+@media (min-width: 1024px) {
   .gallery-photo__img {
     width: 22vw;
     height: 10vw;
   }
+}
+.gallery-photo__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+}
+.gallery-photo__img:hover::after {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .padded-section {
