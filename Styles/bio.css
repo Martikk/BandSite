@@ -400,6 +400,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 2vw;
+    padding-bottom: 3vw;
   }
 }
 
@@ -550,6 +551,12 @@ body {
 .footer_end {
   padding-top: 3vw;
   padding-bottom: 2vw;
+  padding-top: 60px;
+}
+@media (min-width: 813px) {
+  .footer_end {
+    padding-top: 0;
+  }
 }
 
 .footer_info a {
