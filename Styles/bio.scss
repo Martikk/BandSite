@@ -289,7 +289,6 @@ body {
         max-width: 700px;
     }
     @include respond-to(desktop) {
-
         max-width: 60vw;
     }
 }
@@ -379,7 +378,7 @@ body {
     }
 
     &:hover::after {
-        background: rgba(0, 0, 0, 0.5); // Затемнение при наведении
+        background: rgba(0, 0, 0, 0.5); 
     }
 }
 
@@ -398,26 +397,68 @@ body {
     }
 }
 
-.article-about__board {
+
+.article-about__board  {
     @include respond-to(tablet) {
-        padding-left: 2vh;
-        padding-right: 2vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
     }
     @include respond-to(desktop) {
-        padding-left: 4vh;
-        padding-right: 4vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
     }
 }
 
 .comment {
     background-color: $color-text-white;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+.padded-section_2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.padded-section_2 h2 {
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+
+.padded-section_2 ul {
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
 }
 
 .comment_section {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-
+    
+    @include respond-to(tablet) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 16vw;
+        padding-right: 16vw;
+        justify-content: center;
+    }
     &__icon {
         margin-top: 2rem;
         flex-shrink: 0;
@@ -426,7 +467,11 @@ body {
         border-radius: 50%;
         background: url('../Assets/Logo/logo_comment.png') no-repeat center center;
         background-size: cover;
-        // margin-right: 10px;
+        @include respond-to (tablet) {
+            width: 3rem;
+            height: 3rem;
+            margin-top: 1.7rem;
+        }
     }
 
     &__form {
@@ -462,6 +507,14 @@ body {
             height: 2.5rem;
             max-height: 4rem;
             margin-bottom: 1.3rem;
+            @include respond-to(tablet) {
+                height: 3rem;
+                width: 70vw;
+            }
+            @include respond-to(desktop) {
+                height: 3rem;
+                width: 28rem;
+            }
         }
 
         textarea {
@@ -472,8 +525,14 @@ body {
             box-shadow: inset 0 1px 3px #FAFAFA;
             resize: none;
             padding: 0.8rem;
+            @include respond-to(tablet) {
+                height: 4rem;
+                width: 70vw;
+            }
+            @include respond-to(desktop) {
+                width: 28rem;
+            }
         }
-
         button {
             height: 3rem;
             max-width: 100%;
@@ -484,17 +543,26 @@ body {
             padding: 0 0.8rem;
             font-size: 1rem;
             color: $color-text-white;
-
+            @include respond-to (tablet) {
+                height: 2.5rem;
+                float: right;
+                margin-left: auto;
+            }
             &:hover {
                 background-color: $hover-background-color_comment;
             }
+
+        }
         }
     }
-}
+
 
 .comment_list {
     padding: 0;
 
+    @include respond-to(desktop) {
+        width: 35rem;
+    }
     li {
         list-style: none;
     }
@@ -514,6 +582,10 @@ body {
     border-radius: 50%;
     background: #E1E1E1;
     background-size: cover;
+    @include respond-to (tablet) {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 .name-date-container {
