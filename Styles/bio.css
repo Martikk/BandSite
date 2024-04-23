@@ -639,6 +639,7 @@ body {
   padding: 0 0.8rem;
   font-size: 1rem;
   color: #FFFFFF;
+  cursor: pointer;
 }
 @media (min-width: 813px) {
   .comment_section__form button {
@@ -821,4 +822,10 @@ body {
   .Footer_social_one_line img {
     padding-bottom: 25px;
   }
+}
+
+.Shows_section {
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 2rem;
 }/*# sourceMappingURL=bio.css.map */

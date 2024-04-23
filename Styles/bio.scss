@@ -543,6 +543,7 @@ body {
             padding: 0 0.8rem;
             font-size: 1rem;
             color: $color-text-white;
+            cursor: pointer;
             @include respond-to (tablet) {
                 height: 2.5rem;
                 float: right;
@@ -715,4 +716,10 @@ body {
     @include respond-to (desktop) {
         padding-bottom: 25px;
     }
+}
+
+.Shows_section {
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 2rem;
 }
