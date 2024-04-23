@@ -75,9 +75,14 @@ document.addEventListener("DOMContentLoaded", function() {
     
     commentForm.addEventListener("submit", function(event){
         event.preventDefault();
-        const allCommentName = event.target.elements.name.value;
-        const allCommentDescription = event.target.elements.description.value;
-
+        const allCommentName = event.target.elements.name.value.trim();
+        const allCommentDescription = event.target.elements.description.value.trim();
+    
+        if (allCommentName === "" || allCommentDescription === "") {
+            alert("Please fill in both the name and the comment fields.");
+            return; 
+        }
+    
         const newCommentItem = {
             name: allCommentName,
             description: allCommentDescription,
@@ -87,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
         loopThroughForm();
         event.target.reset();
     });
+    
 
     loopThroughForm();
 });

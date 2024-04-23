@@ -39,19 +39,6 @@ body {
   }
 }
 
-.article-about__quote__who {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 400;
-}
-@media (min-width: 813px) {
-  .article-about__quote__who {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-  }
-}
-
 .article-about__article__1, .article-about__article__2, .allComment_list__description {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -78,16 +65,26 @@ body {
   }
 }
 
-.article-about__quote, .comment_list__name {
+.article-about__quote, .comment_list__name, .article-about__quote__who {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
 }
 @media (min-width: 813px) {
-  .article-about__quote, .comment_list__name {
+  .article-about__quote, .comment_list__name, .article-about__quote__who {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
+  }
+}
+
+.article-about__quote__who {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 813px) {
+  .article-about__quote__who {
+    padding-bottom: 0;
   }
 }
 
@@ -163,13 +160,13 @@ body {
   background: #323232;
   text-align: center;
   padding-top: 1rem;
-  padding-left: 2vw;
 }
 @media (min-width: 813px) {
   .navigation {
     align-content: center;
     height: 8rem;
     position: relative;
+    padding-left: 2vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -497,17 +494,16 @@ body {
 .comment_section {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1rem;
 }
 .comment_section__icon {
-  margin-top: 1rem;
+  margin-top: 2rem;
   flex-shrink: 0;
-  width: 65px;
-  height: 65px;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
-  background: url("../Assets/Logo/_84d42434-c112-4437-a362-cb6b4bed92a6 copy.jpeg") no-repeat center center;
+  background: url("../Assets/Logo/logo_comment.png") no-repeat center center;
   background-size: cover;
-  margin-right: 10px;
 }
 .comment_section__form {
   display: flex;
@@ -517,6 +513,16 @@ body {
 .comment_section__form label {
   margin-bottom: 0.5rem;
   color: #AFAFAF;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 813px) {
+  .comment_section__form label {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
 }
 .comment_section__form input,
 .comment_section__form textarea {
@@ -529,12 +535,12 @@ body {
   font-size: 1rem;
 }
 .comment_section__form input {
-  height: 10vw;
+  height: 2.5rem;
   max-height: 4rem;
   margin-bottom: 1.3rem;
 }
 .comment_section__form textarea {
-  height: 30vw;
+  height: 6rem;
   max-height: 8rem;
   margin-bottom: 1rem;
   font-size: 16px;
@@ -543,8 +549,7 @@ body {
   padding: 0.8rem;
 }
 .comment_section__form button {
-  height: 18vw;
-  max-height: 4rem;
+  height: 3rem;
   max-width: 100%;
   background-color: #323232;
   border: 1px solid #ccc;
@@ -573,8 +578,8 @@ body {
 .icon {
   margin-top: 10px;
   flex-shrink: 0;
-  width: 65px;
-  height: 65px;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   background: #E1E1E1;
   background-size: cover;
@@ -597,7 +602,7 @@ body {
 .comment_list__name,
 .comment_list__datas {
   margin: 0;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
