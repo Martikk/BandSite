@@ -1,0 +1,720 @@
+@import "../Styles/mixins";
+@import "../Styles/variables";
+
+@font-face {
+    font-family: $font-family-regular;
+    src: url('../Assets/Font/AvenirNextLTPro-Regular.otf');
+}
+@font-face {
+    font-family: $font-family-demi;
+    src: url('../Assets/Font/AvenirNextLTPro-Demi.otf');
+}
+@font-face {
+    font-family: $font-family-bold;
+    src: url('../Assets/Font/AvenirNextLTPro-Bold.otf');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: $font-family-regular, $font-family-demi, $font-family-bold;
+}
+
+.navigation_link h2 {
+    font-size: 0.875rem; 
+    line-height: 1.375rem; 
+    font-weight: 600;
+    @include respond-to(tablet) {
+        font-size: 1.5rem; 
+        line-height: 2rem; 
+        font-weight: 700;
+    }
+}
+
+.article-about__article__1, .article-about__article__2, .allComment_list__description {
+    font-size: 0.8125rem; 
+    line-height: 1.125rem; 
+    font-weight: 400;
+    @include respond-to(tablet) {
+        font-size: 0.875rem; 
+        line-height: 1.375rem; 
+        font-weight: 400;
+    }
+}
+
+.comment_list__datas {
+    font-size: 0.8125rem; 
+    line-height: 1.125rem; 
+    font-weight: 400;
+    @include respond-to(tablet) {
+        font-size: 0.875rem; 
+        line-height: 1.375rem; 
+        font-weight: 400;
+    }
+}
+
+.article-about__quote, .comment_list__name, .article-about__quote__who {
+    font-size: 0.875rem; 
+    line-height: 1.375rem; 
+    font-weight: 600;
+
+    @include respond-to(tablet) {
+        font-size: 1.5rem; 
+        line-height: 2rem; 
+        font-weight: 700;
+    }
+}
+.article-about__quote__who {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    @include respond-to(tablet) {
+        padding-bottom: 0;
+    }
+}
+
+.footer_end p {
+    font-size: 0.625rem; 
+    line-height: 1.25rem; 
+    @include respond-to(tablet) {
+        font-size: 0.75rem; 
+        line-height: 1.25rem; 
+    }
+}
+
+.footer_3 h3 {
+    @include respond-to(tablet) {
+        font-size: 2.25rem; 
+        line-height: 2.75rem; 
+        font-weight: 700;
+    }
+}
+
+.footer_info p {
+    font-size: 0.8125rem; 
+    line-height: 1.125rem; 
+    font-weight: 400;
+    @include respond-to(tablet) {
+        font-size: 0.875rem; 
+        line-height: 1.25rem; 
+        font-weight: 400;
+    }
+}
+
+.article-about__title, .photo-gallery__title, .comment_title {
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    font-weight: 700; 
+    @include flex-center(row, flex-start);
+    width: 100%;
+    @include respond-to(tablet) {
+        font-size: 2.25rem; 
+        line-height: 2.75rem; 
+        font-weight: 500;
+    }
+}
+
+.article-about__title_2 {
+    font-size: 0.875rem; 
+    line-height: 1.375rem; 
+    font-weight: 500; 
+    @include flex-center(row, flex-start);
+    width: 100%;
+    @include respond-to(tablet) {
+        font-size: 1.5rem; 
+        line-height: 2rem; 
+        font-weight: 500;
+    }
+}
+
+.navigation {
+    background: $color-background-dark;
+    text-align: center;
+    padding-top: 1rem;
+    @include respond-to(tablet) {
+        align-content: center;
+        height: 8rem;
+        position: relative;
+        padding-left: 2vw;
+    @include flex-center(row);
+    @include respond-to(tablet) {
+        align-items: center;
+    }
+}
+}
+.navigation_link h2 {
+    position: relative; 
+    padding: 10px 0;
+}
+
+.current-page h2 {
+    &::after {
+        content: ""; 
+        position: absolute; 
+        bottom: -5px; 
+        left: 0; 
+        width: 100%; 
+        border-bottom: 5px solid $color-highlight; 
+        bottom: -10px; 
+        @include respond-to(tablet) {
+            bottom: -40px; 
+            border-bottom: 8px solid $color-highlight; 
+        }
+    }
+}
+
+.navigation_logo {
+    width: 150px;
+    height: 40px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+        width: 250px;
+        height: 60px;
+        margin-left: 2rem;
+    }
+    @include respond-to(desktop) {
+        margin: 0 4vh 0 6vh;
+        margin-left: 6rem;
+    }
+}
+
+.navigation_logo__img {
+    background: url('../Assets/Logo/Logo-bandsite.svg') no-repeat center center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+
+    @include respond-to(tablet) {
+        padding-top: 0.6vh;
+        max-width: 80%;
+        max-height: 80%;
+    }
+}
+
+.navigation_links {
+    @include flex-center(row, space-around);
+    @include respond-to(tablet) {
+        flex-grow: 1;
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+}
+
+.navigation_link {
+    flex: 1;
+    text-align: center;
+    @include respond-to(tablet) {
+        flex: none;
+    }
+}
+
+.navigation_link a {
+    text-decoration: none;
+    color: $color-text-white;
+}
+
+.navigation_link__shows h2 {
+    color: $color-primary;
+}
+
+.hero-banner {
+    background-image: url('../Assets/Images/hero-bio.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @include flex-center(column, center, center);
+    height: 60vw; 
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    @include respond-to(tablet) {
+        height: 40rem;
+    }
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1;
+}
+
+.hero-banner__text {
+    position: relative;
+    z-index: 2;
+    color: $color-text-white;
+    @include flex-center(row, flex-start);
+    height: 50vh;
+    width: 90%;
+    @include respond-to(tablet) {
+        font-size: 3.75rem;  
+        line-height: 4.25rem; 
+        font-weight: 700; 
+    }
+}
+
+.article-about {
+    background-size: cover;
+    background-position: center;
+    @include flex-center(column, flex-start);
+}
+
+.article-about__img {
+    @include flex-center;
+    height: auto;
+    overflow: hidden;
+    max-width: 95vw;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include respond-to(tablet) {
+        max-width: 700px;
+    }
+    @include respond-to(desktop) {
+        max-width: 60vw;
+    }
+}
+
+.article-about__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.article-about__artikles {
+    @include respond-to(tablet) {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.article-about__article__2 {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    @include respond-to(tablet) {
+        padding-bottom: 0px;
+    }
+}
+.article-about__quote {
+    @include respond-to(desktop) {
+        padding-right:18%;
+    }
+}
+.photo-gallery {
+    @include flex-center(column, center);
+    @include respond-to(tablet) {
+        @include flex-center(row,space-between)
+    }
+}
+
+.gallery {
+    background-color: #FAFAFA;
+    padding: 5px 0;
+    @include respond-to(tablet) {
+        padding:0;
+    }
+}
+
+.gallery-photo {
+    @include respond-to(tablet) {
+        @include flex-center(row);
+        flex-wrap: wrap;
+        gap: 2vw;
+        padding-bottom: 3vw;
+        padding-left: 0;
+        
+    }
+}
+
+.gallery-photo__img {
+    max-width: 100%;
+    height: 50vw;
+    margin: 3vw 0;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    overflow: hidden; 
+    transition: background 0.3s ease;
+
+    @include respond-to(tablet) {
+        width: 28vw;
+        height: 14vw;
+        margin: 0;
+    }
+    @include respond-to(desktop) {
+        width: 24vw;
+        height: 13vw;
+
+    }
+
+    &::after { 
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0); 
+        transition: background 0.3s ease;
+    }
+
+    &:hover::after {
+        background: rgba(0, 0, 0, 0.5); 
+    }
+}
+
+
+.padded-section {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+
+
+.article-about__board  {
+    @include respond-to(tablet) {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+
+.comment {
+    background-color: $color-text-white;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+.padded-section_2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.padded-section_2 h2 {
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+
+.padded-section_2 ul {
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+}
+
+.comment_section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    
+    @include respond-to(tablet) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 16vw;
+        padding-right: 16vw;
+        justify-content: center;
+    }
+    &__icon {
+        margin-top: 2rem;
+        flex-shrink: 0;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background: url('../Assets/Logo/logo_comment.png') no-repeat center center;
+        background-size: cover;
+        @include respond-to (tablet) {
+            width: 3rem;
+            height: 3rem;
+            margin-top: 1.7rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            margin-bottom: 0.5rem;
+            color: $color-primary;
+            font-size: 0.8125rem; 
+            line-height: 1.125rem; 
+            font-weight: 400;
+            @include respond-to(tablet) {
+                font-size: 0.875rem; 
+                line-height: 1.375rem; 
+                font-weight: 400;
+            }
+        }
+
+        input,
+        textarea {
+            max-width: 100%;
+            background-color: $color-second;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+            padding: 0 0.8rem;
+            font-size: 1rem;
+        }
+
+        input {
+            height: 2.5rem;
+            max-height: 4rem;
+            margin-bottom: 1.3rem;
+            @include respond-to(tablet) {
+                height: 3rem;
+                width: 70vw;
+            }
+            @include respond-to(desktop) {
+                height: 3rem;
+                width: 28rem;
+            }
+        }
+
+        textarea {
+            height: 6rem;
+            max-height: 8rem;
+            margin-bottom: 1rem;
+            font-size: 16px;
+            box-shadow: inset 0 1px 3px #FAFAFA;
+            resize: none;
+            padding: 0.8rem;
+            @include respond-to(tablet) {
+                height: 4rem;
+                width: 70vw;
+            }
+            @include respond-to(desktop) {
+                width: 28rem;
+            }
+        }
+        button {
+            height: 3rem;
+            max-width: 100%;
+            background-color: #323232;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+            padding: 0 0.8rem;
+            font-size: 1rem;
+            color: $color-text-white;
+            cursor: pointer;
+            @include respond-to (tablet) {
+                height: 2.5rem;
+                float: right;
+                margin-left: auto;
+            }
+            &:hover {
+                background-color: $hover-background-color_comment;
+            }
+
+        }
+        }
+    }
+
+
+.comment_list {
+    padding: 0;
+
+    @include respond-to(desktop) {
+        width: 35rem;
+    }
+    li {
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.icon {
+    margin-top: 10px;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: #E1E1E1;
+    background-size: cover;
+    @include respond-to (tablet) {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.name-date-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.comment_list__item {
+    align-items: flex-start;
+}
+
+.allComment_list__description {
+    margin: 0 0 0.5rem 0;
+}
+
+.comment_list__name,
+.comment_list__datas {
+    margin: 0;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+.footer_info {
+    padding-top: 1vh;
+    background: $color-background-dark;
+    color: $color-text-white;
+    @include respond-to(tablet) {
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: center;
+        
+}
+}
+
+.footer_5_logo img {
+    @include respond-to(tablet) {
+        margin-left:15vw;
+    }
+    @include respond-to(desktop) {
+        margin-left: 100%;
+
+    }
+}
+.footer_end {
+    @include respond-to(desktop) {
+        flex-basis: 100%;
+        flex-shrink: 0;
+    }
+}
+
+.footer_info_section_2 {
+    @include respond-to(tablet) {
+        @include flex-center(row, flex-start);
+        column-gap: 30px;
+        flex-wrap: wrap;
+        flex-basis: 900px;
+        flex-grow: 1;
+        align-items: last baseline;
+    }
+}
+.footer_1__social a {
+    margin-right: 30px;
+    @include respond-to(tablet) {
+        
+    }
+
+}
+.footer_logo__bandsite__mobile, .desktop_hidden {
+    @include respond-to(tablet) {
+        display: none; 
+    }
+    @include respond-to(desktop) {
+        display: none; 
+    }
+}
+
+.footer_logo__bandsite, .mobile_hidden {
+    display: none; 
+    @include respond-to(tablet) {
+        display: contents; 
+        margin-right: 300px; 
+    }
+    @include respond-to(desktop) {
+        display: contents; 
+    }
+}
+.footer_end {
+    padding-top: 3vw;
+    padding-bottom: 2vw;
+    padding-top: 60px;
+    @include respond-to (tablet) {
+        padding-top: 0;
+    }
+}
+.footer_info a {
+    text-decoration: none; 
+    color: $color-text-white; 
+}
+
+.footer_info { 
+    @include respond-to(desktop) {
+        position: relative;
+    }
+}
+
+.footer_5_logo {
+    @include respond-to(desktop) {
+        padding-top: 4rem;
+        position: absolute;
+        top: 0; 
+        right: 0; 
+        display: block;
+    }
+
+}
+.Footer_social_one_line img {
+    padding-bottom: 5px;
+    @include respond-to (desktop) {
+        padding-bottom: 25px;
+    }
+}
+
