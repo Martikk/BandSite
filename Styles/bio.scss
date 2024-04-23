@@ -50,7 +50,8 @@ body {
         font-weight: 500;
     }
 }
-.article-about__article__1, .article-about__article__2, {
+
+.article-about__article__1, .article-about__article__2, .allComment_list__description {
     font-size: 0.8125rem; 
     line-height: 1.125rem; 
     font-weight: 400;
@@ -61,7 +62,18 @@ body {
     }
 }
 
-.article-about__quote {
+.comment_list__datas {
+    font-size: 0.8125rem; 
+    line-height: 1.125rem; 
+    font-weight: 400;
+    @include respond-to(tablet) {
+        font-size: 0.875rem; 
+        line-height: 1.375rem; 
+        font-weight: 400;
+    }
+}
+
+.article-about__quote, .comment_list__name {
     font-size: 0.875rem; 
     line-height: 1.375rem; 
     font-weight: 600;
@@ -100,10 +112,10 @@ body {
     }
 }
 
-.article-about__title, .photo-gallery__title {
-    font-size: 0.875rem; 
-    line-height: 1.375rem; 
-    font-weight: 500; 
+.article-about__title, .photo-gallery__title, .comment_title {
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    font-weight: 700; 
     @include flex-center(row, flex-start);
     width: 100%;
     @include respond-to(tablet) {
@@ -269,7 +281,7 @@ body {
     @include flex-center;
     height: auto;
     overflow: hidden;
-    max-width: 400px;
+    max-width: 95vw;
     margin: auto;
     height: 100%;
     width: 100%;
@@ -279,6 +291,7 @@ body {
         max-width: 700px;
     }
     @include respond-to(desktop) {
+
         max-width: 60vw;
     }
 }
@@ -398,6 +411,133 @@ body {
     }
 }
 
+.comment {
+    background-color: $color-text-white;
+}
+
+.comment_section {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    &__icon {
+        margin-top: 1rem;
+        flex-shrink: 0;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: url('../Assets/Logo/_84d42434-c112-4437-a362-cb6b4bed92a6 copy.jpeg') no-repeat center center;
+        background-size: cover;
+        margin-right: 10px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            margin-bottom: 0.5rem;
+            color: $color-primary;
+        }
+
+        input,
+        textarea {
+            max-width: 100%;
+            background-color: $color-second;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+            padding: 0 0.8rem;
+            font-size: 1rem;
+        }
+
+        input {
+            height: 10vw;
+            max-height: 4rem;
+            margin-bottom: 1.3rem;
+        }
+
+        textarea {
+            height: 30vw;
+            max-height: 8rem;
+            margin-bottom: 1rem;
+            font-size: 16px;
+            box-shadow: inset 0 1px 3px #FAFAFA;
+            resize: none;
+            padding: 0.8rem;
+        }
+
+        button {
+            height: 18vw;
+            max-height: 4rem;
+            max-width: 100%;
+            background-color: #323232;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+            padding: 0 0.8rem;
+            font-size: 1rem;
+            color: $color-text-white;
+
+            &:hover {
+                background-color: $hover-background-color_comment;
+            }
+        }
+    }
+}
+
+.comment_list {
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.icon {
+    margin-top: 10px;
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #E1E1E1;
+    background-size: cover;
+}
+
+.name-date-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.comment_list__item {
+    align-items: flex-start;
+}
+
+.allComment_list__description {
+    margin: 0 0 0.5rem 0;
+}
+
+.comment_list__name,
+.comment_list__datas {
+    margin: 0;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
 .footer_info {
     padding-top: 1vh;
     background: $color-background-dark;
@@ -411,7 +551,6 @@ body {
         
 }
 }
-
 
 .footer_5_logo img {
     @include respond-to(tablet) {
