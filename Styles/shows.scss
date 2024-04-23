@@ -78,6 +78,9 @@ body {
         line-height: 4.25rem;
         font-weight: 700;
     }
+    @include respond-to(desktop) {
+padding-top: 2rem;
+    }
 }
 
 .hero-banner__text_small {
@@ -90,6 +93,11 @@ body {
         line-height: 2rem;
         font-weight: 500;
     }
+    @include respond-to(desktop) {
+        padding: 0;
+        padding-top: 11rem;
+        margin: 0;
+            }
 }
 
 .sound-cloud {
@@ -103,6 +111,12 @@ body {
     background-size: cover;
     @include respond-to(tablet) {
         width: 50%;
+    }
+    @include respond-to(desktop) {
+        width: 35%;
+        height: 20%;
+        top: 40%;
+        padding-left: 57vw;
     }
 }
 

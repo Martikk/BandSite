@@ -80,6 +80,11 @@ body {
     font-weight: 700;
   }
 }
+@media (min-width: 1024px) {
+  .hero-banner__text_shows {
+    padding-top: 2rem;
+  }
+}
 
 .hero-banner__text_small {
   padding-top: 2rem;
@@ -91,6 +96,13 @@ body {
     font-size: 2rem;
     line-height: 2rem;
     font-weight: 500;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-banner__text_small {
+    padding: 0;
+    padding-top: 11rem;
+    margin: 0;
   }
 }
 
@@ -107,6 +119,14 @@ body {
 @media (min-width: 813px) {
   .sound-cloud {
     width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .sound-cloud {
+    width: 35%;
+    height: 20%;
+    top: 40%;
+    padding-left: 57vw;
   }
 }
 
