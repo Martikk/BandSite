@@ -96,12 +96,13 @@ body {
 
 .sound-cloud {
   position: absolute;
-  top: 55%;
+  top: 65%;
   left: 3%;
-  width: 90%;
-  height: 30%;
+  width: 80vw;
+  height: 16vw;
   z-index: 3;
   pointer-events: none;
+  background-size: cover;
 }
 @media (min-width: 813px) {
   .sound-cloud {
@@ -175,10 +176,21 @@ body {
     width: 14.5rem;
   }
 }
+@media (min-width: 1024px) {
+  .show-date {
+    width: 14rem;
+    padding-right: 2rem;
+  }
+}
 
 @media (min-width: 813px) {
   .show-venue {
     width: 12rem;
+  }
+}
+@media (min-width: 813px) and (min-width: 1024px) {
+  .show-venue {
+    padding-left: 2.5rem;
   }
 }
 
@@ -196,6 +208,13 @@ body {
     font-weight: 500;
   }
 }
+@media (min-width: 813px) and (min-width: 1024px) {
+  .show-location,
+  .show-venue {
+    width: 15rem;
+    padding-right: 2rem;
+  }
+}
 
 @media (min-width: 813px) {
   .show {
@@ -209,15 +228,23 @@ body {
     justify-content: space-between;
   }
 }
-.show hr {
-  display: none;
+@media (min-width: 813px) {
+  .show hr {
+    display: none;
+  }
 }
-.show button {
-  width: 20%;
+@media (min-width: 813px) {
+  .show button {
+    width: 20%;
+  }
 }
 
 .comment_title_alltext {
   display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 @media (min-width: 813px) {
   .comment_title_alltext {
@@ -229,9 +256,65 @@ body {
     font-weight: 500;
   }
 }
+@media (min-width: 813px) and (min-width: 1024px) {
+  .comment_title_alltext {
+    justify-content: flex-start;
+  }
+}
 .comment_title_alltext__date {
   width: 14.5rem;
 }
+@media (min-width: 1024px) {
+  .comment_title_alltext__date {
+    padding-right: 4rem;
+  }
+}
 .comment_title_alltext__venue {
   width: 12rem;
+}
+@media (min-width: 1024px) {
+  .comment_title_alltext__venue {
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .comment_title_alltext__location {
+    padding-right: 20rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comment {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+  }
+}
+
+@media (min-width: 1024px) {
+  .padded-section_2 {
+    padding: 0;
+    padding-right: 8vw;
+    padding-left: 15vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comment_title {
+    display: none;
+  }
+}
+
+.comment_title__mobile_hide {
+  display: none;
+  margin: auto;
+  padding: 0;
+}
+@media (min-width: 1024px) {
+  .comment_title__mobile_hide {
+    display: block;
+    width: 4rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

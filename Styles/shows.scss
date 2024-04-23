@@ -94,13 +94,13 @@ body {
 
 .sound-cloud {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 3%;
-    width: 90%;
-    height: 30%;
+    width: 80vw;
+    height: 16vw;
     z-index: 3;
     pointer-events: none;
-
+    background-size: cover;
     @include respond-to(tablet) {
         width: 50%;
     }
@@ -171,10 +171,17 @@ body {
         font-weight: 600;
         width: 14.5rem;
     }
+    @include respond-to(desktop) {
+        width: 14rem;
+        padding-right: 2rem;
+    }
 }
 .show-venue {
     @include respond-to(tablet) {
         width: 12rem;
+        @include respond-to (desktop) {
+            padding-left: 2.5rem;
+        }
     }
 }
 
@@ -188,6 +195,10 @@ body {
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 500;
+        @include respond-to(desktop) {
+            width: 15rem;
+            padding-right: 2rem;
+        }
     }
 }
 
@@ -204,16 +215,24 @@ body {
     }
 
     hr {
+        @include respond-to(tablet) {
         display: none;
     }
-
+}
     button {
-        width: 20%;
+        @include respond-to(tablet) {
+            width: 20%;
+        }
+
     }
 }
 
 .comment_title_alltext {
     display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     @include respond-to(tablet) {
         display: block;
         display: flex;
@@ -221,13 +240,58 @@ body {
             font-size: 1.2rem;
             line-height: 2rem;
             font-weight: 500;
+            @include respond-to (desktop) {
+                justify-content: flex-start;
+            }
     }
     &__date{
         width: 14.5rem;
+        @include respond-to (desktop) {
+            padding-right: 4rem;
+        }
     }
     &__venue {
         width: 12rem;
+        @include respond-to (desktop) {
+            padding-right: 4rem;
+        }
+    }
+    &__location {
+        @include respond-to (desktop) {
+            padding-right: 20rem;
+        }
+    }
+}
+.comment{
+    @include respond-to (desktop) {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+
+    }
+}
+.padded-section_2 {
+    @include respond-to (desktop) {
+        padding: 0;
+        padding-right: 8vw;
+        padding-left: 15vw;
     }
 }
 
+.comment_title {
+    @include respond-to (desktop) {
+display: none;
 
+    }
+}
+.comment_title__mobile_hide {
+    display: none;
+    margin: auto;
+    padding: 0;
+    @include respond-to (desktop) {
+        display: block;
+        width: 4rem;
+            }
+}
