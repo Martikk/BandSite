@@ -5,16 +5,19 @@
     font-family: $font-family-regular;
     src: url('../Assets/Font/AvenirNextLTPro-Regular.otf');
 }
+
 @font-face {
     font-family: $font-family-demi;
     src: url('../Assets/Font/AvenirNextLTPro-Demi.otf');
 }
+
 @font-face {
     font-family: $font-family-bold;
     src: url('../Assets/Font/AvenirNextLTPro-Bold.otf');
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -36,10 +39,11 @@ body {
     background-size: cover;
     background-position: center;
     @include flex-center(column, flex-start, center);
-    height: 60vw; 
+    height: 60vw;
     max-width: 100%;
     position: relative;
     overflow: hidden;
+
     @include respond-to(tablet) {
         height: 40rem;
     }
@@ -56,7 +60,8 @@ body {
     z-index: 1;
 }
 
-.hero-banner__text_shows, .hero-banner__text_small {
+.hero-banner__text_shows,
+.hero-banner__text_small {
     position: relative;
     z-index: 2;
     color: $color-text-white;
@@ -67,10 +72,11 @@ body {
 .hero-banner__text_shows {
     margin: 0;
     padding-top: 1rem;
+
     @include respond-to(tablet) {
-        font-size: 3.75rem;  
-        line-height: 4.25rem; 
-        font-weight: 700; 
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+        font-weight: 700;
     }
 }
 
@@ -78,28 +84,30 @@ body {
     padding-top: 2rem;
     padding-bottom: 1rem;
     margin: 0;
+
     @include respond-to(tablet) {
-        font-size: 2rem;  
-        line-height: 2rem; 
-        font-weight: 500; 
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 500;
     }
 }
 
 .sound-cloud {
     position: absolute;
-    top: 55%; 
+    top: 55%;
     left: 3%;
     width: 90%;
     height: 30%;
-    z-index: 3; 
-    pointer-events: none; 
+    z-index: 3;
+    pointer-events: none;
+
     @include respond-to(tablet) {
         width: 50%;
     }
 }
 
 .sound-cloud iframe {
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 
@@ -107,18 +115,16 @@ body {
     display: flex;
     flex-flow: column;
     padding-bottom: 2rem;
-    @include respond-to(tablet) {
-    }
 }
 
 
 .full-width-button {
     height: 3rem;
-    width: 100%; 
+    width: 100%;
     padding: 10px 0;
-    font-size: 16px; 
+    font-size: 16px;
     cursor: pointer;
-    border: none; 
+    border: none;
     background-color: #323232;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -126,50 +132,102 @@ body {
     padding: 0 0.8rem;
     font-size: 1rem;
     color: $color-text-white;
-    border-radius: 5px; 
+    border-radius: 5px;
+
     &:hover {
         background-color: $hover-background-color_comment;
     }
-        @include respond-to (tablet) {
-            height: 2.5rem;
-            float: right;
-            margin-left: auto;
-}
+
+    @include respond-to (tablet) {
+        height: 2.5rem;
+        float: right;
+        margin-left: auto;
+    }
 }
 
 .show-label {
     margin-bottom: 0.5rem;
     color: $color-primary;
-    font-size: 0.8125rem; 
-    line-height: 1.125rem; 
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
+
     @include respond-to(tablet) {
-        font-size: 0.875rem; 
-        line-height: 1.375rem; 
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         font-weight: 400;
+        display: none;
     }
 }
 
 .show-date {
-    font-size: 0.875rem; 
-    line-height: 1.375rem; 
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 600;
 
     @include respond-to(tablet) {
-        font-size: 1.5rem; 
-        line-height: 2rem; 
-        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        width: 14.5rem;
+    }
+}
+.show-venue {
+    @include respond-to(tablet) {
+        width: 12rem;
     }
 }
 
-.show-location, .show-venue {
-    font-size: 0.875rem; 
-    line-height: 1.375rem; 
+.show-location,
+.show-venue {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 500;
 
     @include respond-to(tablet) {
-        font-size: 1.5rem; 
-        line-height: 2rem; 
-        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 500;
     }
 }
+
+.show {
+    @include respond-to(tablet) {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        align-content: flex-start;
+        justify-content: space-between;
+    }
+
+    hr {
+        display: none;
+    }
+
+    button {
+        width: 20%;
+    }
+}
+
+.comment_title_alltext {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+        display: flex;
+        color: $color-primary;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            font-weight: 500;
+    }
+    &__date{
+        width: 14.5rem;
+    }
+    &__venue {
+        width: 12rem;
+    }
+}
+
+
