@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const showDiv = document.createElement('div');
         showDiv.className = 'show';
 
-
         const dateLabel = document.createElement('p');
         dateLabel.className = 'show-label';
         dateLabel.textContent = 'DATE';
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showDiv.appendChild(venueLabel);
         showDiv.appendChild(venueValue);
 
-
         const locationLabel = document.createElement('p');
         locationLabel.className = 'show-label';
         locationLabel.textContent = 'LOCATION';
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         locationValue.textContent = show.LOCATION;
         showDiv.appendChild(locationLabel);
         showDiv.appendChild(locationValue);
-
 
         const buyButton = document.createElement('button');
         buyButton.setAttribute('type', 'submit');
@@ -53,14 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         showDiv.appendChild(buyButton);
 
-
-        const divider = document.createElement('hr');
-        showDiv.appendChild(divider);
-
-
         showsContainer.appendChild(showDiv);
+
+            const hr = document.createElement('hr');
+            showsContainer.appendChild(hr);
     });
 });
-
-
-

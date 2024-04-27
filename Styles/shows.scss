@@ -23,16 +23,12 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    font-family: $font-family-regular, $font-family-demi, $font-family-bold;
 }
 
 html {
     font-size: 16px;
 }
-
-body {
-    font-family: $font-family-regular, $font-family-demi, $font-family-bold;
-}
-
 
 .hero-banner {
     background-image: url('../Assets/Images/hero-shows.jpg');
@@ -47,57 +43,57 @@ body {
     @include respond-to(tablet) {
         height: 40rem;
     }
-}
 
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(50, 50, 50, 0.5);
-    z-index: 1;
-}
-
-.hero-banner__text_shows,
-.hero-banner__text_small {
-    position: relative;
-    z-index: 2;
-    color: $color-text-white;
-    @include flex-center(row, flex-start);
-    width: 90%;
-}
-
-.hero-banner__text_shows {
-    margin: 0;
-    padding-top: 1rem;
-
-    @include respond-to(tablet) {
-        font-size: 3.75rem;
-        line-height: 4.25rem;
-        font-weight: 700;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(50, 50, 50, 0.5);
+        z-index: 1;
     }
-    @include respond-to(desktop) {
-padding-top: 2rem;
-    }
-}
 
-.hero-banner__text_small {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    margin: 0;
-
-    @include respond-to(tablet) {
-        font-size: 2rem;
-        line-height: 2rem;
-        font-weight: 500;
+    &__text_shows,
+    &__text_small {
+        position: relative;
+        z-index: 2;
+        color: $color-text-white;
+        @include flex-center(row, flex-start);
+        width: 90%;
     }
-    @include respond-to(desktop) {
-        padding: 0;
-        padding-top: 11rem;
+
+    &__text_shows {
         margin: 0;
-            }
+        padding-top: 1rem;
+
+        @include respond-to(tablet) {
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            font-weight: 700;
+        }
+        @include respond-to(desktop) {
+            padding-top: 2rem;
+        }
+    }
+
+    &__text_small {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        margin: 0;
+
+        @include respond-to(tablet) {
+            font-size: 2rem;
+            line-height: 2rem;
+            font-weight: 500;
+        }
+        @include respond-to(desktop) {
+            padding: 0;
+            padding-top: 11rem;
+            margin: 0;
+        }
+    }
 }
 
 .sound-cloud {
@@ -109,6 +105,7 @@ padding-top: 2rem;
     z-index: 3;
     pointer-events: none;
     background-size: cover;
+
     @include respond-to(tablet) {
         width: 50%;
     }
@@ -118,25 +115,47 @@ padding-top: 2rem;
         top: 40%;
         padding-left: 57vw;
     }
+
+    iframe {
+        pointer-events: auto;
+    }
+}
+.comment {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include respond-to(tablet) {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @include respond-to(desktop) {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
 }
 
-.sound-cloud iframe {
-    pointer-events: auto;
+.comment_title {
+    @media (min-width: 1300px)  {
+        position: absolute;
+        margin: 15px;
+        padding-left: 5vw;
+    }
 }
-
 
 .Shows_section {
     display: flex;
     flex-flow: column;
-    padding-bottom: 2rem;
+    @include respond-to(desktop) {
+padding-right: 10px;
+    }
+    @media (min-width: 1300px)  {
+        padding-left: 25%;
+    }
 }
-
 
 .full-width-button {
     height: 3rem;
     width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
     cursor: pointer;
     border: none;
     background-color: #323232;
@@ -152,74 +171,14 @@ padding-top: 2rem;
         background-color: $hover-background-color_comment;
     }
 
-    @include respond-to (tablet) {
-        height: 2.5rem;
-        float: right;
-        margin-left: auto;
-    }
-}
-
-.show-label {
-    margin-bottom: 0.5rem;
-    color: $color-primary;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-
     @include respond-to(tablet) {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        font-weight: 400;
-        display: none;
-    }
-}
-
-.show-date {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 600;
-
-    @include respond-to(tablet) {
-        font-size: 1.5rem;
-        line-height: 2rem;
-        font-weight: 600;
-        width: 14.5rem;
-    }
-    @include respond-to(desktop) {
-        width: 14rem;
-        padding-right: 2rem;
-    }
-}
-.show-venue {
-    @include respond-to(tablet) {
-        width: 12rem;
-        @include respond-to (desktop) {
-            padding-left: 2.5rem;
-        }
-    }
-}
-
-.show-location,
-.show-venue {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 500;
-
-    @include respond-to(tablet) {
-        font-size: 1.5rem;
-        line-height: 2rem;
-        font-weight: 500;
-        @include respond-to(desktop) {
-            width: 15rem;
-            padding-right: 2rem;
-        }
+        height: 4rem;
+        width: 25%;
     }
 }
 
 .show {
     @include respond-to(tablet) {
-        max-width: 100%;
-        width: 100%;
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
@@ -228,84 +187,83 @@ padding-top: 2rem;
         justify-content: space-between;
     }
 
-    hr {
+    &-label {
+        margin-bottom: 0.5rem;
+        color: $color-primary;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+
         @include respond-to(tablet) {
-        display: none;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            font-weight: 400;
+            display: none;
+        }
+    }
+
+    &-date {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        font-weight: 600;
+
+        @include respond-to(tablet) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 600;
+            width: 14.5rem;
+        }
+        @include respond-to(desktop) {
+            width: 16.5rem;
+            padding-right: 2rem;
+        }
+    }
+
+    &-venue {
+        @include respond-to(tablet) {
+            width: 12rem;
+            @include respond-to(desktop) {
+                padding-left: 2.5rem;
+            }
+        }
+    }
+
+    &-location,
+    &-venue {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        font-weight: 500;
+
+        @include respond-to(tablet) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 500;
+            @include respond-to(desktop) {
+                width: 15rem;
+                padding-right: 2rem;
+            }
+        }
     }
 }
-    button {
-        @include respond-to(tablet) {
-            width: 20%;
-        }
 
-    }
+hr {
+    border: none;          
+    border-top: 2px solid #ccc;
+    margin: 20px 0;       
 }
 
 .comment_title_alltext {
     display: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: flex-start;
+
     @include respond-to(tablet) {
         display: block;
         display: flex;
-        color: $color-primary;
-            font-size: 1.2rem;
-            line-height: 2rem;
-            font-weight: 500;
-            @include respond-to (desktop) {
-                justify-content: flex-start;
-            }
+        align-items: center;
+        justify-content: space-between;
+        color: #AFAFAF;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 500;
+        padding-right: 30%;
     }
-    &__date{
-        width: 14.5rem;
-        @include respond-to (desktop) {
-            padding-right: 4rem;
-        }
-    }
-    &__venue {
-        width: 12rem;
-        @include respond-to (desktop) {
-            padding-right: 4rem;
-        }
-    }
-    &__location {
-        @include respond-to (desktop) {
-            padding-right: 20rem;
-        }
-    }
-}
-.comment{
-    @include respond-to (desktop) {
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-content: stretch;
-
-    }
-}
-.padded-section_2 {
-    @include respond-to (desktop) {
-        padding: 0;
-        padding-right: 8vw;
-        padding-left: 15vw;
-    }
-}
-
-.comment_title {
-    @include respond-to (desktop) {
-display: none;
-
-    }
-}
-.comment_title__mobile_hide {
-    display: none;
-    margin: auto;
-    padding: 0;
-    @include respond-to (desktop) {
-        display: block;
-        width: 4rem;
-            }
 }
