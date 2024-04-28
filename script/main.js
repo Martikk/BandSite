@@ -1,98 +1,177 @@
-const allComment = [{
-    name: "Victor Pinto",
-    description: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    timestamp: 1698950400000,
-},
-{
-    name: "Christina Cabrera",
-    description: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    timestamp: 1701148800000,
-},
-{
-    name: "Isaac Tadesse",
-    description: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    timestamp: 1700515200000,
-},
-];
-
-console.table(allComment);
-
 document.addEventListener("DOMContentLoaded", function() {
     const commentList = document.querySelector(".comment_list");
     const commentForm = document.querySelector(".comment_section__form");
 
-    function loopThroughForm() {
-        commentList.innerText = ""; 
-        
-        const startDivider = document.createElement("hr");
-        startDivider.style.borderTop = "1px solid #AFAFAF"; 
-        commentList.appendChild(startDivider);
-        
-        for (let i = 0; i < allComment.length; i++) {
-            const allCommentItem = document.createElement("li");
-            allCommentItem.classList.add("comment_list__item");
-    
-            const icon = document.createElement("div");
-            icon.classList.add("icon");
-    
-            const textContainer = document.createElement("div");
-    
-            const nameAndDateContainer = document.createElement("div");
-            nameAndDateContainer.style.display = "flex";
-            
-            nameAndDateContainer.style.justifyContent = "space-between";
-            nameAndDateContainer.style.alignItems = "center"; 
-            
-
-            const allCommentName = document.createElement("h3");
-            allCommentName.innerText = allComment[i].name;
-            allCommentName.classList.add("comment_list__name");
-    
-            const allCommentDateCreator = document.createElement("p");
-            allCommentDateCreator.innerText = new Date(allComment[i].timestamp).toLocaleDateString();
-            allCommentDateCreator.style.color = "#AFAFAF";
-            allCommentDateCreator.classList.add("comment_list__datas");
-    
-            nameAndDateContainer.appendChild(allCommentName);
-            nameAndDateContainer.appendChild(allCommentDateCreator);
-
-            const allCommentDescription = document.createElement("p");
-            allCommentDescription.innerText = allComment[i].description;
-            allCommentDescription.classList.add("allComment_list__description");
-
-            textContainer.appendChild(nameAndDateContainer);
-            textContainer.appendChild(allCommentDescription);
-    
-            allCommentItem.appendChild(icon);
-            allCommentItem.appendChild(textContainer);
-            commentList.appendChild(allCommentItem);
-    
-            const divider = document.createElement("hr");
-            divider.style.borderTop = "1px solid #AFAFAF"; 
-            commentList.appendChild(divider);
+    // Function to fetch comments and update the UI
+    async function fetchComments() {
+        try {
+            const response = await fetch('https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=your_api_key_here');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const comments = await response.json();
+            displayComments(comments);
+        } catch (error) {
+            console.error('Failed to fetch comments:', error);
         }
-    };
-    
-    commentForm.addEventListener("submit", function(event){
+    }
+
+    // Function to display comments on the webpage
+    function displayComments(comments) {
+        commentList.innerHTML = ''; // Clear existing comments
+        comments.forEach(comment => {
+            const commentElement = document.createElement('li');
+            commentElement.classList.add('comment-item'); // Add a class for potential styling
+
+            // Format the timestamp nicely
+            const date = new Date(comment.timestamp).toLocaleDateString("en-US", {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            // Handling potentially missing likes or id
+            const likes = comment.likes || 0; // Default to 0 if likes are missing
+
+            // Creating HTML content for the comment
+            commentElement.innerHTML = `
+                <div class="comment-meta">
+                    <h4>${comment.name}</h4>
+                    <span>${date}</span>
+                    <span>Likes: ${likes}</span>
+                </div>
+                <p class="comment-text">${comment.comment}</p>
+            `;
+
+            commentList.appendChild(commentElement);
+        });
+    }
+
+    // Event listener for handling form submission
+    commentForm.addEventListener("submit", async function(event) {
         event.preventDefault();
-        const allCommentName = event.target.elements.name.value.trim();
-        const allCommentDescription = event.target.elements.description.value.trim();
-    
-        if (allCommentName === "" || allCommentDescription === "") {
-            alert("Please fill in both the name and the comment fields.");
-            return; 
-        }
-    
-        const newCommentItem = {
-            name: allCommentName,
-            description: allCommentDescription,
-            timestamp: Date.now(),
-        };
-        allComment.unshift(newCommentItem);
-        loopThroughForm();
-        event.target.reset();
-    });
-    
+        const nameInput = document.getElementById('name');
+        const commentInput = document.getElementById('description');
 
-    loopThroughForm();
+        if (!nameInput.value.trim() || !commentInput.value.trim()) {
+            alert("Please fill in both the name and the comment fields.");
+            return;
+        }
+
+        const newComment = {
+            name: nameInput.value.trim(),
+            comment: commentInput.value.trim(),
+        };
+
+        try {
+            const response = await fetch('https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=your_api_key_here', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newComment),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const createdComment = await response.json();
+            console.log('Comment posted successfully:', JSON.stringify(createdComment, null, 2));
+            await fetchComments(); // Refresh comments on the page
+        } catch (error) {
+            console.error('Failed to post new comment:', error);
+            alert('Failed to post comment. Please check the console for more details.');
+        }
+
+        event.target.reset(); // Reset form fields after submission
+    });
+
+    fetchComments(); // Initial call to load comments when the page loads
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showsContainer = document.querySelector('.Shows_section');
+
+    const allTicketsShows = [
+        { DATE: "Mon Sept 09 2024", VENUE: "Ronald Lane", LOCATION: "San Francisco, CA" },
+        { DATE: "Tue Sept 17 2024", VENUE: "Pier 3 East", LOCATION: "San Francisco, CA" },
+        { DATE: "Sat Oct 12 2024", VENUE: "View Lounge", LOCATION: "San Francisco, CA" },
+        { DATE: "Sat Nov 16 2024", VENUE: "Hyatt Agency", LOCATION: "San Francisco, CA" },
+        { DATE: "Fri Nov 29 2024", VENUE: "Moscow Center", LOCATION: "San Francisco, CA" },
+        { DATE: "Wed Dec 18 2024", VENUE: "Press Club", LOCATION: "San Francisco, CA" }
+    ];
+
+    allTicketsShows.forEach((show, index) => {
+        const showDiv = document.createElement('div');
+        showDiv.className = 'show';
+
+        const dateLabel = document.createElement('p');
+        dateLabel.className = 'show-label';
+        dateLabel.textContent = 'DATE';
+        const dateValue = document.createElement('p');
+        dateValue.className = 'show-date';
+        dateValue.textContent = show.DATE;
+        showDiv.appendChild(dateLabel);
+        showDiv.appendChild(dateValue);
+
+        const venueLabel = document.createElement('p');
+        venueLabel.className = 'show-label';
+        venueLabel.textContent = 'VENUE';
+        const venueValue = document.createElement('p');
+        venueValue.className = 'show-venue';
+        venueValue.textContent = show.VENUE;
+        showDiv.appendChild(venueLabel);
+        showDiv.appendChild(venueValue);
+
+        const locationLabel = document.createElement('p');
+        locationLabel.className = 'show-label';
+        locationLabel.textContent = 'LOCATION';
+        const locationValue = document.createElement('p');
+        locationValue.className = 'show-location';
+        locationValue.textContent = show.LOCATION;
+        showDiv.appendChild(locationLabel);
+        showDiv.appendChild(locationValue);
+
+        const buyButton = document.createElement('button');
+        buyButton.setAttribute('type', 'submit');
+        buyButton.className = 'full-width-button';
+        buyButton.textContent = 'BUY TICKETS';
+        buyButton.addEventListener('click', function() {
+            alert('Thank you!');
+        });
+        showDiv.appendChild(buyButton);
+
+        showsContainer.appendChild(showDiv);
+
+            const hr = document.createElement('hr');
+            showsContainer.appendChild(hr);
+    });
 });

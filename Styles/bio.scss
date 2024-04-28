@@ -409,15 +409,6 @@ body {
     }
 }
 
-.comment {
-    background-color: $color-text-white;
-    @include respond-to(desktop) {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-}
 .padded-section_2 {
     padding-left: 20px;
     padding-right: 20px;
@@ -443,6 +434,16 @@ body {
         padding-left: 12vw;
         padding-right: 12vw;
     }
+}
+
+.comment {
+    background-color: $color-text-white;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
 }
 
 .comment_section {
@@ -560,24 +561,25 @@ body {
 
 .comment_list {
     padding: 0;
-
+    list-style: none;
+    position: relative;
     @include respond-to(desktop) {
         width: 35rem;
     }
-    li {
-        list-style: none;
-    }
-
     &__item {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        // display: flex;
+        // align-items: center;
+        // gap: 20px;
+        padding-left: 20%;
+
     }
 }
 
 .icon {
+    position: absolute;
+    left: 0%;
     margin-top: 10px;
-    flex-shrink: 0;
+    // flex-shrink: 0;
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
@@ -586,29 +588,32 @@ body {
     @include respond-to (tablet) {
         width: 3rem;
         height: 3rem;
+        left: 10vw;
+    }
+    @include respond-to (desktop) {
+        left: 12.5vw;
     }
 }
+// .name-date-container {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+// }
 
-.name-date-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
+// .comment_list__item {
+//     align-items: flex-start;
+// }
 
-.comment_list__item {
-    align-items: flex-start;
-}
+// .allComment_list__description {
+//     margin: 0 0 0.5rem 0;
+// }
 
-.allComment_list__description {
-    margin: 0 0 0.5rem 0;
-}
-
-.comment_list__name,
-.comment_list__datas {
-    margin: 0;
-    padding-top: 0.5rem;
-    margin-bottom: 1rem;
-}
+// .comment_list__name,
+// .comment_list__datas {
+//     margin: 0;
+//     padding-top: 0.5rem;
+//     margin-bottom: 1rem;
+// }
 
 
 
